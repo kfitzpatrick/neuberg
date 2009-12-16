@@ -3,3 +3,4 @@ Original app was created from Kevin Fitzpatrick's fork of eLabs' rails template 
 The Clearance authentication code was removed since there were bugs and Kevin wasn't comfortable with the auth/auth code existing before the features did.
 
 Chris is now working on the project, too.
+..
