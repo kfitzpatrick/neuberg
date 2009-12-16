@@ -1,0 +1,20 @@
+%h1 
+  ="#{@member.name}'s Profile"
+  
+%p 
+  ="#{@member.membership_level_name} Member"
+
+%p 
+  ="Name: #{@member.name}"
+%p 
+  ="Email: #{@member.email}"
+%p 
+  Billing Notes:<br />
+  = @member.billing_notes
+
+%p
+  ="Primary Industry: #{@member.primary_industry}"
+
+%p
+  =link_to "Edit Member Info", edit_member_path(@member)
+

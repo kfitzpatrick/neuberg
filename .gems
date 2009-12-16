@@ -1,0 +1,5 @@
+rails --version 2.3.5
+rack --version 1.0.1
+formtastic --version '>= 0.9.0'
+annotate-models --version '>= 1.0.4'
+haml --version '>=2.2.14'
