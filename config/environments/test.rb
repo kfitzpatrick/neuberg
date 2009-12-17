@@ -28,7 +28,7 @@ config.action_mailer.delivery_method = :test
 # config.active_record.schema_format = :sql
 config.gem 'mocha', :version => '>=0.9.5'
 config.gem 'rspec', :lib => false, :version => '>= 1.2.9'
-config.gem 'rspec-rails', :lib => false, :version => '>= 1.2.9'
+config.gem 'rspec-rails', :lib => 'spec/rails', :version => '>= 1.2.9'
 config.gem 'term-ansicolor', :lib => false, :version => '>=1.0.4'
 config.gem 'treetop', :lib => false
 config.gem 'diff-lcs', :lib => false
