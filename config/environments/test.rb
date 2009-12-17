@@ -42,4 +42,4 @@ config.gem 'random_data', :version => '>=1.5.0'
 config.gem 'faker', :version => '>=0.3.1'
 config.gem 'machinist', :lib => 'machinist', :source => 'http://gemcutter.org', :version => '>=1.0.5'
 config.gem 'unboxed-be_valid_asset', :lib => 'be_valid_asset', :source => 'http://gems.github.com', :version => '>= 1.1.0'
-# config.gem "contextually" # don't know why, but contextually is breaking my specs when I include it here
+config.gem "contextually", :version => ">= 0.1"
