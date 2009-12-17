@@ -1,0 +1,87 @@
+--- !ruby/object:Gem::Specification 
+name: unboxed-be_valid_asset
+version: !ruby/object:Gem::Version 
+  version: 1.1.0
+platform: ruby
+authors: []
+
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2009-05-16 00:00:00 -04:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: rspec
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: "0"
+    version: 
+description: Provides be_valid_xhtml and be_valid_css matchers for rspec controller and view tests.
+email: github@unboxedconsulting.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: []
+
+files: 
+- Rakefile
+- README.markdown
+- MIT-LICENSE.txt
+- lib/be_valid_asset/be_valid_base.rb
+- lib/be_valid_asset/be_valid_css.rb
+- lib/be_valid_asset/be_valid_feed.rb
+- lib/be_valid_asset/be_valid_xhtml.rb
+- lib/be_valid_asset.rb
+- spec/be_valid_asset/be_valid_css_spec.rb
+- spec/be_valid_asset/be_valid_feed_spec.rb
+- spec/be_valid_asset/be_valid_xhtml_spec.rb
+- spec/spec_helper.rb
+- spec/files/invalid.css
+- spec/files/invalid.html
+- spec/files/invalid_feed.xml
+- spec/files/valid-1.css
+- spec/files/valid-2.css
+- spec/files/valid-3.css
+- spec/files/valid.css
+- spec/files/valid.html
+- spec/files/valid_feed.xml
+- spec/spec.opts
+has_rdoc: true
+homepage: http://github.com/unboxed/be_valid_asset
+licenses: []
+
+post_install_message: 
+rdoc_options: []
+
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.5
+signing_key: 
+specification_version: 2
+summary: Markup validation for RSpec
+test_files: 
+- spec/be_valid_asset/be_valid_css_spec.rb
+- spec/be_valid_asset/be_valid_feed_spec.rb
+- spec/be_valid_asset/be_valid_xhtml_spec.rb
