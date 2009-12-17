@@ -4,9 +4,7 @@
   - @members.each do |member|
     %tr.member
       %td 
-        = member.membership_level_name
-      %td 
-        = link_to "#{member.name}<br />#{member.email}", member_path(member)
+        = link_to "#{member.membership_level_name} - #{member.name}", member_path(member)
 
 %p 
   = link_to "Add a Member", new_member_path

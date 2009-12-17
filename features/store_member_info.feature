@@ -11,15 +11,15 @@ Feature: Store & edit member's information
   Scenario: Create a new member
     Given I am on the members page
     When I follow "Add a Member"
-    Then I should be on the new member page
+    Then I should see "Enter Member's Information"
     
     When I fill in "Name" with "Kevin Fitzpatrick"
     And I fill in "Email" with "kevin@indyhall.org"
-    And I fill in "Billing Notes" with "Kevin prefers his invoices to come by carrier pigeon."
-    And I fill in "Primary Industry" with "Rails Guru"
+    And I fill in "Billing notes" with "Kevin prefers his invoices to come by carrier pigeon."
+    And I fill in "Primary industry" with "Rails Guru"
     And I press "Create"
 
-    Then I should be on the members page
+    Then I should see the header "Members"
     And I should see "Kevin Fitzpatrick"
 
     When I follow "Kevin Fitzpatrick"
@@ -62,8 +62,8 @@ Feature: Store & edit member's information
     Given a Fulltime member named "Alex"
     And a Lite member named "Kevin"
     And I am on the members page
-    Then I should see a table row with the cells "Fulltime, Alex"
-    And I should see a table row with the cells "Lite, Kevin"  
+    Then I should see "Fulltime - Alex"
+    And I should see "Lite - Kevin"
 
   Scenario: edit member info
     Given a member named "Chris Dawnson" with email "dawnson@indyhall.org" and billing notes "Carrier pigeon"
@@ -72,8 +72,8 @@ Feature: Store & edit member's information
     And I follow "Edit Member Info"
     And I fill in "Name" with "Chris Dawson"
     And I fill in "Email" with "dawson@indyhall.org"
-    And I fill in "Billing Notes" with "Pony Express"
-    And I fill in "Primary Industry" with "Java Hacker"
+    And I fill in "Billing notes" with "Pony Express"
+    And I fill in "Primary industry" with "Java Hacker"
     And I press "Update Member"
         
     Then I should see "Chris Dawson"
