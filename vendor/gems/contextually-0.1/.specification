@@ -1,0 +1,90 @@
+--- !ruby/object:Gem::Specification 
+name: contextually
+version: !ruby/object:Gem::Version 
+  version: "0.1"
+platform: ruby
+authors: 
+- Jonas Nicklas
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2009-10-18 00:00:00 -04:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: remarkable_rails
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 3.1.10
+    version: 
+- !ruby/object:Gem::Dependency 
+  name: hoe
+  type: :development
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 2.3.3
+    version: 
+description: Contextually is a gem for running Rails controller tests under different user contexts in a convenient way. So you can test your authorization without much effort.
+email: 
+- jonas.nicklas@gmail.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- History.txt
+- Manifest.txt
+files: 
+- History.txt
+- Manifest.txt
+- README.rdoc
+- Rakefile
+- lib/contextually.rb
+- lib/contextually/definition.rb
+- lib/contextually/example_extension.rb
+- script/console
+- script/destroy
+- script/generate
+- spec/application_controller.rb
+- spec/contextually_spec.rb
+- spec/spec_helper.rb
+- spec/spec_spec.rb
+has_rdoc: true
+homepage: http://github.com/jnicklas/contextually
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --main
+- README.rdoc
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: contextually
+rubygems_version: 1.3.5
+signing_key: 
+specification_version: 3
+summary: Contextually is a gem for running Rails controller tests under different user contexts in a convenient way
+test_files: []
+
