@@ -16,29 +16,17 @@ begin
     Cucumber::Rake::Task.new({:ok => 'db:test:prepare'}, 'Run features that should pass') do |t|
       t.binary = vendored_cucumber_binary
       t.fork = true # You may get faster startup if you set this to false
-      t.cucumber_opts = "--color --tags ~@wip,~@javascript --strict --format #{ENV['CUCUMBER_FORMAT'] || 'pretty'}"
+      t.profile = 'default'
     end
 
     Cucumber::Rake::Task.new({:wip => 'db:test:prepare'}, 'Run features that are being worked on') do |t|
       t.binary = vendored_cucumber_binary
       t.fork = true # You may get faster startup if you set this to false
-      t.cucumber_opts = "--color --tags @wip:2 --wip --format #{ENV['CUCUMBER_FORMAT'] || 'pretty'}"
-    end
-    
-    Cucumber::Rake::Task.new({:javascript => 'db:test:prepare'}, 'Run features tagged with @both_modes & @javascript using selenium') do |t|
-      t.binary = vendored_cucumber_binary
-      t.fork = true # You may get faster startup if you set this to false
-      t.cucumber_opts = "--color --tags ~@wip,@both_modes --tags ~@wip,@javascript --strict webrat_mode=selenium --format #{ENV['CUCUMBER_FORMAT'] || 'pretty'}"
-    end
-
-    Cucumber::Rake::Task.new({:javascript_wip => 'db:test:prepare'}, 'Run features in progress tagged with @both_modes & @javascript using selenium') do |t|
-      t.binary = vendored_cucumber_binary
-      t.fork = true # You may get faster startup if you set this to false
-      t.cucumber_opts = "--color --tags @wip,@both_modes --tags @wip,@javascript --wip webrat_mode=selenium --format #{ENV['CUCUMBER_FORMAT'] || 'pretty'}"
+      t.profile = 'wip'
     end
 
     desc 'Run all features'
-    task :all => [:ok, :wip, :javascript]
+    task :all => [:ok, :wip]
   end
   desc 'Alias for cucumber:ok'
   task :cucumber => 'cucumber:ok'

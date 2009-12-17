@@ -34,8 +34,9 @@ config.gem 'treetop', :lib => false
 config.gem 'diff-lcs', :lib => false
 config.gem 'nokogiri', :lib => false
 config.gem 'builder', :lib => false
-config.gem 'cucumber', :version => '= 0.4.4'
-config.gem 'webrat', :version => '>= 0.5.3'
+config.gem 'cucumber', :version => '>= 0.5.1'
+config.gem "cucumber-rails", :lib => false, :version => ">= 0.2.1"
+config.gem 'webrat', :version => '>= 0.6.0'
 config.gem 'remarkable_rails', :lib => false, :version => '>= 3.1.11'
 config.gem 'bmabey-email_spec', :lib => 'email_spec', :source => 'http://gems.github.com', :version => '>= 0.3.4'
 config.gem 'random_data', :version => '>=1.5.0'

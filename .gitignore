@@ -17,3 +17,4 @@ spec/javascripts/fixtures/*.html
 public/uploads
 webrat-*.html
 .idea/*
+rerun.txt
