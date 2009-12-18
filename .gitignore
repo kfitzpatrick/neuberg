@@ -18,4 +18,4 @@ public/uploads
 webrat-*.html
 .idea/*
 rerun.txt
-capybara*
+capybara-*.html
