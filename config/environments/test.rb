@@ -43,6 +43,7 @@ config.gem 'faker', :version => '>=0.3.1'
 config.gem 'machinist', :lib => 'machinist', :source => 'http://gemcutter.org', :version => '>=1.0.5'
 config.gem 'unboxed-be_valid_asset', :lib => 'be_valid_asset', :source => 'http://gems.github.com', :version => '>= 1.1.0'
 config.gem "contextually", :version => ">= 0.1"
+config.gem 'factory_girl', :version => '>= 1.2.3'
 
 # copied from cucumber.rb - The new cucumber (0.5.1) requires you to run under the 
 # cucumber environment, but our CI server RunCodeRun.com always runs in the test environment
