@@ -43,3 +43,28 @@ config.gem 'faker', :version => '>=0.3.1'
 config.gem 'machinist', :lib => 'machinist', :source => 'http://gemcutter.org', :version => '>=1.0.5'
 config.gem 'unboxed-be_valid_asset', :lib => 'be_valid_asset', :source => 'http://gems.github.com', :version => '>= 1.1.0'
 config.gem "contextually", :version => ">= 0.1"
+
+# copied from cucumber.rb - The new cucumber (0.5.1) requires you to run under the 
+# cucumber environment, but our CI server RunCodeRun.com always runs in the test environment
+
+# ----------- Start Copy from Cucumber 0.5.1 generated cucumber.rb ------------
+
+
+config.cache_classes = true
+
+config.whiny_nils = true
+
+config.action_controller.consider_all_requests_local = true
+config.action_controller.perform_caching             = false
+
+config.action_controller.allow_forgery_protection    = false
+
+config.action_mailer.delivery_method = :test
+
+config.gem 'cucumber-rails',   :lib => false, :version => '>=0.2.1' unless File.directory?(File.join(Rails.root, 'vendor/plugins/cucumber-rails'))
+config.gem 'database_cleaner', :lib => false, :version => '>=0.2.3' unless File.directory?(File.join(Rails.root, 'vendor/plugins/database_cleaner'))
+config.gem 'capybara',         :lib => false, :version => '>=0.2.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/capybara'))
+config.gem 'rspec',            :lib => false, :version => '>=1.2.9' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec'))
+config.gem 'rspec-rails',      :lib => false, :version => '>=1.2.9' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
+
+# -------------End Copy from Cucumber 0.5.1 generated cucumber.rb --------------
