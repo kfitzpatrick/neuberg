@@ -13,7 +13,8 @@ class MembersController < ApplicationController
   end
   
   def index
-    @members = Member.all
+    @active_members = Member.active
+    @dormant_members = Member.dormant
   end
   
   def show

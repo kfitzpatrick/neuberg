@@ -1,10 +1,22 @@
 %h1 Members
 
-%table
-  - @members.each do |member|
+%table.active
+  - @active_members.each do |member|
     %tr.member
       %td 
         = link_to "#{member.membership_level_name} - #{member.name}", member_path(member)
+      %td
+        = "#{member.email}"
+
+%h3 Dormant Members
+
+%table.dormant
+  - @dormant_members.each do |member|
+    %tr.member
+      %td 
+        = link_to "#{member.membership_level_name} - #{member.name}", member_path(member)
+      %td
+        = "#{member.email}"
 
 %p 
   = link_to "Add a Member", new_member_path

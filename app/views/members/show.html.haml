@@ -1,6 +1,11 @@
 %h1 
   ="#{@member.name}'s Profile"
+
   
+- if @member.dormant
+  %p 
+    = "#{@member.name} is currently dormant"
+
 %p 
   ="#{@member.membership_level_name} Member"
 

@@ -32,7 +32,9 @@ Feature: Store & edit member's information
     And I should see "Primary Industry: Rails Guru"
 
   Scenario: display member info
-    Given a member named "Alex Hillman" with email "alex@indyhall.org"
+    Given the following member exists:
+    | name         | email             |
+    | Alex Hillman | alex@indyhall.org |
     When I go to the members page
     And I follow "Alex Hillman"
 
