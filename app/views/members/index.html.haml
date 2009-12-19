@@ -1,5 +1,11 @@
 %h1 Members
 
+%p 
+  = "Total Members: #{@active_members.length + @dormant_members.length}<br/>"
+  = "Active: #{@active_members.length}<br />"
+  = "Inactive: #{@dormant_members.length}"
+  
+
 %table.active
   - @active_members.each do |member|
     %tr.member
