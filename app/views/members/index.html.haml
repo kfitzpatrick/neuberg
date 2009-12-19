@@ -6,23 +6,11 @@
   = "Inactive: #{@dormant_members.length}"
   
 
-%table.active
-  - @active_members.each do |member|
-    %tr.member
-      %td 
-        = link_to "#{member.membership_level_name} - #{member.name}", member_path(member)
-      %td
-        = "#{member.email}"
+= member_table(@active_members, "active")
 
 %h3 Dormant Members
 
-%table.dormant
-  - @dormant_members.each do |member|
-    %tr.member
-      %td 
-        = link_to "#{member.membership_level_name} - #{member.name}", member_path(member)
-      %td
-        = "#{member.email}"
+= member_table(@dormant_members, "dormant")
 
 %p 
   = link_to "Add a Member", new_member_path

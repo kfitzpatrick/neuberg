@@ -14,7 +14,6 @@ Feature: Show membership level counts
     | false   |
     | false   |
     When I go to the members page
-    And show me the page
     Then I should see "Total Members: 7"
     And I should see "Active: 4"
     And I should see "Inactive: 3"

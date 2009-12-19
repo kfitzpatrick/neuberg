@@ -1,0 +1,7 @@
+%table{:class => table_style }
+  - members.each do |member|
+    %tr.member
+      %td 
+        = link_to "#{member.membership_level_name} - #{member.name}", member_path(member)
+      %td
+        = "#{member.email}"
