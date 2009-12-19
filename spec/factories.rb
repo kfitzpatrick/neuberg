@@ -37,7 +37,7 @@ Factory.define :member do |f|
   f.name                { Sham.name }
   f.email               { Sham.email }
   f.billing_notes       { Sham.text }
-  f.membership_level    { MembershipLevel.find_by_name('Basic') }
+  f.membership_level    { MembershipLevel.find_or_create_by_name('Basic') }
 end
 
 Factory.define :membership_level do |f|
