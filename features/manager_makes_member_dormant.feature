@@ -24,3 +24,14 @@ Feature: Manager makes member dormant
     When I go to the members page
     And I follow "ActiveMember"
     Then I should not see "ActiveMember is currently dormant"
+
+  Scenario: make a dormant member active and move them back into active member list
+    Given a member exists with a name of "DormantMember"
+    When I go to the members page
+    And I follow "DormantMember"
+    And follow "Edit Member Info"
+    And I uncheck "Dormant"
+    And I press "Update Member"  
+    When I go to the members page
+    Then I should see "DormantMember" within ".active"
+    
