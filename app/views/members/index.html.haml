@@ -1,11 +1,34 @@
 %h1 Members
 
-%p 
-  = "Total Members: #{@active_members.length + @dormant_members.length}<br/>"
-  = "Active: #{@active_members.length}<br />"
-  = "Inactive: #{@dormant_members.length}"
-  
-
+%table{:border => 1, "cellpadding" => 5}
+  %tr
+    %td
+      = "Total Members: #{@active_members.length + @dormant_members.length}"
+    %td 
+      = "F #{@count_fulltime_active_members + @count_fulltime_inactive_members}"
+    %td 
+      = "L #{@count_lite_active_members + @count_lite_inactive_members}"
+    %td 
+      = "B #{@count_basic_active_members + @count_basic_inactive_members}"
+  %tr
+    %td
+      = "Active: #{@active_members.length}"
+    %td 
+      = "F #{@count_fulltime_active_members}"
+    %td 
+      = "L #{@count_lite_active_members}"
+    %td 
+      = "B #{@count_basic_active_members}"
+  %tr
+    %td
+      = "Inactive: #{@dormant_members.length}"
+    %td 
+      = "F #{@count_fulltime_inactive_members}"
+    %td 
+      = "L #{@count_lite_inactive_members}"
+    %td 
+      = "B #{@count_basic_inactive_members}"
+    
 = member_table(@active_members, "active")
 
 %h3 Dormant Members

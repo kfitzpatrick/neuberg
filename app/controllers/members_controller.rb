@@ -15,6 +15,35 @@ class MembersController < ApplicationController
   def index
     @active_members = Member.active
     @dormant_members = Member.dormant
+    
+    @count_basic_active_members = 0
+    @count_lite_active_members = 0
+    @count_fulltime_active_members = 0
+    @active_members.group_by(&:membership_level).each do |level, members|
+      if level.name == 'Basic'
+        @count_basic_active_members = members.count
+      elsif level.name == 'Lite'
+        @count_lite_active_members = members.count
+      elsif level.name == 'Fulltime'
+        @count_fulltime_active_members = members.count
+      end
+      
+    end
+    
+    @count_basic_inactive_members = 0
+    @count_lite_inactive_members = 0
+    @count_fulltime_inactive_members = 0
+    @dormant_members.group_by(&:membership_level).each do |level, members|
+      if level.name == 'Basic'
+        @count_basic_inactive_members = members.count 
+      elsif level.name == 'Lite'
+        @count_lite_inactive_members = members.count
+      elsif level.name == 'Fulltime'
+        @count_fulltime_inactive_members = members.count
+      end
+    end
+    
+    
   end
   
   def show

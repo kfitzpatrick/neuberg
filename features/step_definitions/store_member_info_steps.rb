@@ -15,3 +15,15 @@ Given /^a Lite member named "([^\"]*)"$/ do |member_name|
   Member.make(:name => member_name, 
         :membership_level => MembershipLevel.find_or_create_by_name('Lite'))
 end
+
+Given /^(\d+) (\w+) active members? exists?$/ do |count, membership_level_name|
+  count.to_i.times { Factory(:member, 
+                              :dormant => false,
+                              :membership_level => MembershipLevel.find_or_create_by_name(membership_level_name)) }
+end
+
+Given /^(\d+) (\w+) inactive members? exists?$/ do |count, membership_level_name|
+  count.to_i.times { Factory(:member, 
+                              :dormant => true,
+                              :membership_level => MembershipLevel.find_or_create_by_name(membership_level_name)) }
+end
