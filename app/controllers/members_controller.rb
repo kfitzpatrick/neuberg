@@ -17,23 +17,6 @@ class MembersController < ApplicationController
     @dormant_members = Member.dormant
     
     @member_metrics = Member.metrics
-    
-    @count_basic_active_members = 0
-    @active_members.group_by(&:membership_level).each do |level, members|
-      if level.name == 'Basic'
-        @count_basic_active_members = members.count
-      end
-      
-    end
-    
-    @count_basic_inactive_members = 0
-    @dormant_members.group_by(&:membership_level).each do |level, members|
-      if level.name == 'Basic'
-        @count_basic_inactive_members = members.count 
-      end
-    end
-    
-    
   end
   
   def show
