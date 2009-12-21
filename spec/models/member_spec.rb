@@ -43,7 +43,7 @@ describe Member do
   describe "#metrics" do
     
     it "gives you an object with all the info you need about the current membership" do
-      Member.metrics.class.should == MemberMetrics 
+      Member.metrics.class.should == MemberMetricsSnapshot
     end
     
     context "with a couple of members" do

@@ -30,7 +30,7 @@ class Member < ActiveRecord::Base
     end
 
     def metrics
-      MemberMetrics.new
+      MemberMetricsSnapshot.new
     end
   end
   

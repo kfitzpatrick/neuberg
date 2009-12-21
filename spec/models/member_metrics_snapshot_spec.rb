@@ -29,23 +29,32 @@ def give_me_inactive_fulltime_members(number)
   number.times { a_fulltime_member(true) }
 end
 
-describe MemberMetrics do
+describe MemberMetricsSnapshot do
 
-  before(:each) do
-    @metrics = MemberMetrics.new
-  end
-  
   describe "#total_count" do
     context "with no members" do
       it "returns 0" do
+        @metrics = MemberMetricsSnapshot.new
         @metrics.total_count.should == 0 
       end
     end
     
-    context "with two members" do
-      before { 2.times { Factory(:member) } }
+    context "with active members" do
+      before { give_me_active_lite_members(2) }
       it "returns the number of existing members" do
+        @metrics = MemberMetricsSnapshot.new
         @metrics.total_count.should == 2
+      end
+    end
+    
+    context "with active & inactive members" do
+      before do 
+        give_me_active_lite_members(2) 
+        give_me_inactive_fulltime_members(1)
+      end
+      it "returns the number of existing members" do
+        @metrics = MemberMetricsSnapshot.new
+        @metrics.total_count.should == 3
       end
     end
   end
@@ -53,6 +62,7 @@ describe MemberMetrics do
   describe "#fulltime" do
     context "with no members" do
       it "returns 0" do
+        @metrics = MemberMetricsSnapshot.new
         @metrics.fulltime.should == 0
       end
     end
@@ -60,6 +70,7 @@ describe MemberMetrics do
     context "with some members who aren't fulltime" do
       before { give_me_active_lite_members(2) }
       it "returns 0" do
+        @metrics = MemberMetricsSnapshot.new
         @metrics.fulltime.should == 0
       end
     end
@@ -67,6 +78,7 @@ describe MemberMetrics do
     context "with all active members" do
       before { give_me_active_fulltime_members(2) }
       it "returns the count of only fulltime members" do
+        @metrics = MemberMetricsSnapshot.new
         @metrics.fulltime.should == 2
       end
     end
@@ -76,6 +88,7 @@ describe MemberMetrics do
         give_me_inactive_fulltime_members(2)
       end
       it "returns the count of all fulltime members regardless of activity" do
+        @metrics = MemberMetricsSnapshot.new
         @metrics.fulltime.should == 2
       end
     end
@@ -86,6 +99,7 @@ describe MemberMetrics do
         give_me_inactive_fulltime_members(2)
       end
       it "returns the count of all fulltime members regardless of activity" do
+        @metrics = MemberMetricsSnapshot.new
         @metrics.fulltime.should == 4
       end
     end
@@ -99,6 +113,7 @@ describe MemberMetrics do
       end
     
       it "returns only fulltime members" do
+        @metrics = MemberMetricsSnapshot.new
         @metrics.fulltime_active.should == 2
       end
     end
@@ -110,6 +125,7 @@ describe MemberMetrics do
       end
       
       it "doesn't return inactive members" do
+        @metrics = MemberMetricsSnapshot.new
         @metrics.fulltime_active.should == 2
       end
     end
@@ -123,6 +139,7 @@ describe MemberMetrics do
       end
     
       it "returns only fulltime members" do
+        @metrics = MemberMetricsSnapshot.new
         @metrics.fulltime_dormant.should == 2
       end
     end
@@ -134,6 +151,7 @@ describe MemberMetrics do
       end
       
       it "doesn't return active members" do
+        @metrics = MemberMetricsSnapshot.new
         @metrics.fulltime_dormant.should == 1
       end
     end  
