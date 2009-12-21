@@ -71,6 +71,27 @@ describe MemberMetricsSnapshot do
       end
     end
   end
+  
+  describe "#active" do
+    context "with 0 members" do
+      it "returns 0" do
+        @metrics = MemberMetricsSnapshot.new
+        @metrics.active.should == 0
+      end
+    end
+    
+    context "with members of all levels" do
+      before do
+        give_me_active_fulltime_members(1)
+        give_me_active_lite_members(2)
+        give_me_active_basic_members(3)
+      end
+      it "returns all members" do
+        @metrics = MemberMetricsSnapshot.new
+        @metrics.active.should == 6
+      end
+    end
+  end
 
   describe "#basic" do
     context "with no members" do

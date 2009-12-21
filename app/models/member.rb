@@ -38,4 +38,7 @@ class Member < ActiveRecord::Base
     membership_level.name unless membership_level.nil?
   end
   
+  def active?
+    !dormant?
+  end
 end

@@ -23,6 +23,8 @@ class MemberMetricsSnapshot
       @metrics["#{level.name.downcase}_dormant".to_sym] = levels_dormant_members.size
       
     end
+    
+    @metrics[:active] = @all_members.select(&:active?).size
   end
   
   def total_count
@@ -63,5 +65,9 @@ class MemberMetricsSnapshot
   
   def basic_dormant
     @metrics[:basic_dormant] || 0
+  end
+  
+  def active
+    @metrics[:active] || 0
   end
 end

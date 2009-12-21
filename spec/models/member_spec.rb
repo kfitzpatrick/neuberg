@@ -55,4 +55,20 @@ describe Member do
     end
     
   end
+
+  describe "#active?" do
+    context "when the user is dormant" do
+      before{ @member = Factory.build(:member, :dormant => true) }
+      it "returns false" do
+        @member.should_not be_active
+      end
+    end
+    context "when user is active" do
+      before{ @member = Factory.build(:member, :dormant => false) }
+      it "returns true" do
+        @member.should be_active
+      end
+    end
+  end
+
 end
