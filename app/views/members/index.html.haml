@@ -7,7 +7,7 @@
     %td 
       = "F #{@member_metrics.fulltime}"
     %td 
-      = "L #{@count_lite_active_members + @count_lite_inactive_members}"
+      = "L #{@member_metrics.lite}"
     %td 
       = "B #{@count_basic_active_members + @count_basic_inactive_members}"
   %tr
@@ -16,7 +16,7 @@
     %td 
       = "F #{@member_metrics.fulltime_active}"
     %td 
-      = "L #{@count_lite_active_members}"
+      = "L #{@member_metrics.lite_active}"
     %td 
       = "B #{@count_basic_active_members}"
   %tr
@@ -25,7 +25,7 @@
     %td 
       = "F #{@member_metrics.fulltime_dormant}"
     %td 
-      = "L #{@count_lite_inactive_members}"
+      = "L #{@member_metrics.lite_dormant}"
     %td 
       = "B #{@count_basic_inactive_members}"
     

@@ -19,23 +19,17 @@ class MembersController < ApplicationController
     @member_metrics = Member.metrics
     
     @count_basic_active_members = 0
-    @count_lite_active_members = 0
     @active_members.group_by(&:membership_level).each do |level, members|
       if level.name == 'Basic'
         @count_basic_active_members = members.count
-      elsif level.name == 'Lite'
-        @count_lite_active_members = members.count
       end
       
     end
     
     @count_basic_inactive_members = 0
-    @count_lite_inactive_members = 0
     @dormant_members.group_by(&:membership_level).each do |level, members|
       if level.name == 'Basic'
         @count_basic_inactive_members = members.count 
-      elsif level.name == 'Lite'
-        @count_lite_inactive_members = members.count
       end
     end
     

@@ -4,7 +4,7 @@ class MemberMetricsSnapshot
   end
   
   def get_metrics
-    @all_members = Member.all()
+    @all_members = Member.all
     @metrics = { :total => @all_members.length }
     
     @members_by_level = @all_members.group_by(&:membership_level)
@@ -39,5 +39,17 @@ class MemberMetricsSnapshot
   
   def fulltime_dormant
     @metrics[:fulltime_dormant] || 0
+  end
+  
+  def lite
+    @metrics[:lite] || 0
+  end
+  
+  def lite_active
+    @metrics[:lite_active] || 0
+  end
+  
+  def lite_dormant
+    @metrics[:lite_dormant] || 0
   end
 end
