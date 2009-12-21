@@ -28,9 +28,14 @@ class Member < ActiveRecord::Base
     def active
       all(:conditions => ['dormant = ?', false])
     end
+
+    def metrics
+      MemberMetrics.new
+    end
   end
   
   def membership_level_name
     membership_level.name unless membership_level.nil?
   end
+  
 end

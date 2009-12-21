@@ -11,4 +11,14 @@
 
 class MembershipLevel < ActiveRecord::Base
   attr_accessible :name  
+  
+  class << self
+    def fulltime
+      find_or_create_by_name('Fulltime')
+    end
+  
+    def lite
+      find_or_create_by_name('Lite')
+    end
+  end
 end

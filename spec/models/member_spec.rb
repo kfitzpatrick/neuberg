@@ -39,4 +39,20 @@ describe Member do
       Member.make.membership_level_name.should_not be_blank
     end
   end
+  
+  describe "#metrics" do
+    
+    it "gives you an object with all the info you need about the current membership" do
+      Member.metrics.class.should == MemberMetrics 
+    end
+    
+    context "with a couple of members" do
+      before { 2.times { Factory(:member) } }
+      
+      it "can tell you the total number of members" do
+        Member.metrics.total_count.should == 2
+      end
+    end
+    
+  end
 end

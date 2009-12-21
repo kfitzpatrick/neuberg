@@ -3,9 +3,9 @@
 %table{:border => 1, "cellpadding" => 5}
   %tr
     %td
-      = "Total Members: #{@active_members.length + @dormant_members.length}"
+      = "Total Members: #{@member_metrics.total_count}"
     %td 
-      = "F #{@count_fulltime_active_members + @count_fulltime_inactive_members}"
+      = "F #{@member_metrics.fulltime}"
     %td 
       = "L #{@count_lite_active_members + @count_lite_inactive_members}"
     %td 
@@ -14,7 +14,7 @@
     %td
       = "Active: #{@active_members.length}"
     %td 
-      = "F #{@count_fulltime_active_members}"
+      = "F #{@member_metrics.fulltime_active}"
     %td 
       = "L #{@count_lite_active_members}"
     %td 
@@ -23,7 +23,7 @@
     %td
       = "Inactive: #{@dormant_members.length}"
     %td 
-      = "F #{@count_fulltime_inactive_members}"
+      = "F #{@member_metrics.fulltime_dormant}"
     %td 
       = "L #{@count_lite_inactive_members}"
     %td 

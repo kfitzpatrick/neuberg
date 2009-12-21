@@ -8,8 +8,9 @@ describe MembersController do
   end
 
   as :visitor, :get => :index do
-    before { Member.should_receive(:dormant).and_return([])}
-    before { Member.should_receive(:active).and_return([])}
+    before { Member.should_receive(:metrics).and_return({}) }
+    before { Member.should_receive(:dormant).and_return([]) }
+    before { Member.should_receive(:active).and_return([])  }
     it { should respond_with(:success) }
     it { should render_template(:index)}
   end
