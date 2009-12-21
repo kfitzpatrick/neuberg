@@ -47,11 +47,11 @@ describe MembershipLevel do
     describe "when it already exists in the database" do
       before { Factory(:membership_level, :name => 'Lite') }
       
-      it "finds the existing Fulltime MembershipLevel" do
+      it "finds the existing Lite MembershipLevel" do
         should_find_level_with_name(:lite, 'Lite')
       end
       
-      it "does not create a new Fulltime MembershipLevel in the DB" do
+      it "does not create a new Lite MembershipLevel in the DB" do
         should_find_level_with_name(:lite, 'Lite')
         MembershipLevel.count(:conditions => {:name => "Lite" }).should == 1
       end
