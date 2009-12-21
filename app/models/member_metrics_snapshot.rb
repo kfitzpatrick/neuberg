@@ -5,22 +5,22 @@ class MemberMetricsSnapshot
   
   def get_metrics
     @all_members = Member.all
-    @metrics = { :total => @all_members.length }
+    @metrics = { :total => @all_members.size }
     
     @members_by_level = @all_members.group_by(&:membership_level)
     
     @members_by_level.each do |level, level_members|
-      @metrics[level.name.downcase.to_sym] = level_members.length
+      @metrics[level.name.downcase.to_sym] = level_members.size
       
       levels_active_members = level_members.select do |member|
         !member.dormant
       end
-      @metrics["#{level.name.downcase}_active".to_sym] = levels_active_members.length
+      @metrics["#{level.name.downcase}_active".to_sym] = levels_active_members.size
       
       levels_dormant_members = level_members.select do |member|
         member.dormant
       end
-      @metrics["#{level.name.downcase}_dormant".to_sym] = levels_dormant_members.length
+      @metrics["#{level.name.downcase}_dormant".to_sym] = levels_dormant_members.size
       
     end
   end
