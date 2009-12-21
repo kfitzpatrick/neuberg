@@ -9,7 +9,7 @@
     %td 
       = "L #{@member_metrics.lite}"
     %td 
-      = "B #{@count_basic_active_members + @count_basic_inactive_members}"
+      = "B #{@member_metrics.basic}"
   %tr
     %td
       = "Active: #{@active_members.length}"
@@ -18,7 +18,7 @@
     %td 
       = "L #{@member_metrics.lite_active}"
     %td 
-      = "B #{@count_basic_active_members}"
+      = "B #{@member_metrics.basic_active}"
   %tr
     %td
       = "Inactive: #{@dormant_members.length}"
@@ -27,7 +27,7 @@
     %td 
       = "L #{@member_metrics.lite_dormant}"
     %td 
-      = "B #{@count_basic_inactive_members}"
+      = "B #{@member_metrics.basic_dormant}"
     
 = member_table(@active_members, "active")
 

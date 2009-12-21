@@ -52,4 +52,16 @@ class MemberMetricsSnapshot
   def lite_dormant
     @metrics[:lite_dormant] || 0
   end
+  
+  def basic
+    @metrics[:basic] || 0
+  end
+  
+  def basic_active
+    @metrics[:basic_active] || 0
+  end
+  
+  def basic_dormant
+    @metrics[:basic_dormant] || 0
+  end
 end

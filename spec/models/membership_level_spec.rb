@@ -60,8 +60,23 @@ describe MembershipLevel do
   end
   
   describe "#basic" do
-    it "does something" do
-      pending
+    describe "when it isn't in the database" do
+      it "creates it and returns the Basic MembershipLevel" do
+        should_find_level_with_name(:basic, 'Basic')
+      end
+    end
+    
+    describe "when it already exists in the database" do
+      before { Factory(:membership_level, :name => 'Basic') }
+      
+      it "finds the existing Basic MembershipLevel" do
+        should_find_level_with_name(:basic, 'Basic')
+      end
+      
+      it "does not create a new Basic MembershipLevel in the DB" do
+        should_find_level_with_name(:basic, 'Basic')
+        MembershipLevel.count(:conditions => {:name => "Basic" }).should == 1
+      end
     end
   end
 end

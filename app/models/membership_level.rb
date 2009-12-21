@@ -20,5 +20,9 @@ class MembershipLevel < ActiveRecord::Base
     def lite
       find_or_create_by_name('Lite')
     end
+    
+    def basic
+      find_or_create_by_name('Basic')
+    end
   end
 end
