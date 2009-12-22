@@ -14,19 +14,19 @@ Feature: Show membership level counts
     
     When I go to the members page
     
-    Then I should see "Total Members: 21"
-    And I should see "F 5"
-    And I should see "L 7"
-    And I should see "B 9"
+    Then I should see "Total Current Members: 21"
+    And I should see "Full Time: 5"
+    And I should see "Lite: 7"
+    And I should see "Basic: 9"
     
-    And I should see "Active: 6"
-    And I should see "F 1"
-    And I should see "L 2"
-    And I should see "B 3"
+    And I should see "Total Active Members: 6"
+    And I should see "Full Time: 1"
+    And I should see "Lite: 2"
+    And I should see "Basic: 3"
     
-    And I should see "Inactive: 15"
-    And I should see "F 4"
-    And I should see "L 5"
-    And I should see "B 6"
+    And I should see "Total Inactive Members: 15"
+    And I should see "Full Time: 4"
+    And I should see "Lite: 5"
+    And I should see "Basic: 6"
   
   

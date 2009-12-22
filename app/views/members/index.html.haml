@@ -1,3 +1,4 @@
+%h1 Members
 %p 
   %strong Welcome to the IndyHall Member Manager.
 
@@ -23,7 +24,7 @@
         = "Total Active Members: #{@member_metrics.active}"
   %tr
     %td 
-      = "Full: #{@member_metrics.fulltime_active}"
+      = "Full Time: #{@member_metrics.fulltime_active}"
     %td 
       = "Lite: #{@member_metrics.lite_active}"
     %td 
@@ -40,7 +41,7 @@
         = "Total Inactive Members: #{@dormant_members.length}"
   %tr    
     %td 
-      = "Full: #{@member_metrics.fulltime_dormant}"
+      = "Full Time: #{@member_metrics.fulltime_dormant}"
     %td 
       = "Lite: #{@member_metrics.lite_dormant}"
     %td 

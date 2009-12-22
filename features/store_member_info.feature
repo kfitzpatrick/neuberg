@@ -64,8 +64,10 @@ Feature: Store & edit member's information
     Given a Fulltime member named "Alex"
     And a Lite member named "Kevin"
     And I am on the members page
-    Then I should see "Fulltime - Alex"
-    And I should see "Lite - Kevin"
+    Then I should see "Fulltime"
+    And I should see "Alex"
+    And I should see "Lite"
+    And I should see "Kevin"
 
   Scenario: edit member info
     Given a member named "Chris Dawnson" with email "dawnson@indyhall.org" and billing notes "Carrier pigeon"

@@ -4,28 +4,49 @@ Description: Clio
 Design by: Johnny Bilotta
 Development by: Alex Hillman
 */
-
 body {
-  font-family:Verdana, sans-serif;
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:16px;
+	line-height:26px;
+  color:#717073;
+	font-weight:bold;
+  background: #e5e0cb url('http://indyhall.org/images/bricks.jpg') repeat top left;
 	margin:0;
-	padding:0;
-	text-align:center;
-	background:#CCC;
+	padding:20px 0;
+	padding-top:0;
 }
-a, a:visited, a:active, a:hover{
-	color:#012;
-	text-decoration:underline;
+a, a:visited, a:active{
+  color:#826b29;
+	text-decoration:none;
 	outline:none;
+}
+a:hover{
+  text-decoration:underline;
 }
 :focus {
 	-moz-outline-style: none;
 }
+.center{
+  text-align: center;
+}
+h2.right{
+  text-align:right;
+}
+blockquote{
+  margin:25px;
+  font-style: italic;
+}
 #contents{
-  width:785px;
-  margin:30px auto 0 auto;
-  text-align:left;
+  position:relative;
+  z-index:2;
+  width:760px;
   background:#FFF;
-  padding:10px;
+  margin:0 auto;
+  border:2px solid #a78e6b; 
+  border-right:2px solid #a78e6b; 
+  border-bottom:3px solid #a78e6b;
+  border-top:0;
+  padding:10px 20px 10px 20px;
 }
 table#wide{
   width:100%;
