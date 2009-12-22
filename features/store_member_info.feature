@@ -8,6 +8,19 @@ Feature: Store & edit member's information
     And a membership level called "Lite"
     And a membership level called "Fulltime"
 
+  Scenario: Navigation
+    Given a member exists with a name of "Alex"
+    And I am on the members page
+    When I follow "Alex"
+    And I follow "Edit Member Info"
+    And I follow "Back to Members"
+    Then I should see the header "Members"
+    
+    When I follow "Alex"
+    And I follow "Back to Members"
+    Then I should see the header "Members"
+    
+
   Scenario: Create a new member
     Given I am on the members page
     When I follow "Add a Member"

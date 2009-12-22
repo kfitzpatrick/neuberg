@@ -1,6 +1,9 @@
 %h1 
   ="#{@member.name}'s Profile"
 
+%p 
+  = link_to "&laquo; Back to Members", members_path
+
   
 - if @member.dormant
   %p 
