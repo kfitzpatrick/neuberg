@@ -1,4 +1,3 @@
-%h1 Members
 
 %table{:border => 1, "cellpadding" => 5}
   %tr
@@ -10,28 +9,36 @@
       = "L #{@member_metrics.lite}"
     %td 
       = "B #{@member_metrics.basic}"
+
+%h1 Members
+
+%table{:border => 1, "cellpadding" => 5}
   %tr
-    %td
-      = "Active: #{@member_metrics.active}"
-    %td 
-      = "F #{@member_metrics.fulltime_active}"
-    %td 
-      = "L #{@member_metrics.lite_active}"
-    %td 
-      = "B #{@member_metrics.basic_active}"
+    %td{:colspan => 3, "align" => "center"}
+      = "Active Members: #{@member_metrics.active}"
   %tr
-    %td
-      = "Inactive: #{@dormant_members.length}"
     %td 
-      = "F #{@member_metrics.fulltime_dormant}"
+      = "Full: #{@member_metrics.fulltime_active}"
     %td 
-      = "L #{@member_metrics.lite_dormant}"
+      = "Lite: #{@member_metrics.lite_active}"
     %td 
-      = "B #{@member_metrics.basic_dormant}"
-    
+      = "Basic: #{@member_metrics.basic_active}"
+
 = member_table(@active_members, "active")
 
 %h3 Dormant Members
+
+%table{:border => 1, "cellpadding" => 5}      
+  %tr
+    %td{:colspan => 3, "align" => "center"}
+      = "Inactive Members: #{@dormant_members.length}"
+  %tr    
+    %td 
+      = "Full: #{@member_metrics.fulltime_dormant}"
+    %td 
+      = "Lite: #{@member_metrics.lite_dormant}"
+    %td 
+      = "Basic: #{@member_metrics.basic_dormant}"
 
 = member_table(@dormant_members, "dormant")
 
