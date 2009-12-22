@@ -1,0 +1,38 @@
+/********
+	Float Styles
+		**********/
+.floatwrapper:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.floatwrapper {display:inline-block;}
+/* Hide from IE Mac \*/
+	.floatwrapper {display:block;}
+/* End hide from IE Mac */
+
+.floatleft{
+	float:left;
+}
+.floatright{
+	float:right;
+}
+.left{
+	float:left;
+	padding:0px 15px 5px 0;
+}
+.center{
+	margin-bottom:10px;
+}
+.right{
+	float:right;
+	margin:0px 0 5px 15px;
+}
+.clear{
+	clear:both;
+}
+.hide{
+	display:none;
+}

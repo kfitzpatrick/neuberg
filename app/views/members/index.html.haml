@@ -1,21 +1,26 @@
-
-%table{:border => 1, "cellpadding" => 5}
-  %tr
-    %td
-      = "Total Members: #{@member_metrics.total_count}"
-    %td 
-      = "F #{@member_metrics.fulltime}"
-    %td 
-      = "L #{@member_metrics.lite}"
-    %td 
-      = "B #{@member_metrics.basic}"
-
-%h1 Members
+%p 
+  %strong Welcome to the IndyHall Member Manager.
 
 %table{:border => 1, "cellpadding" => 5}
   %tr
     %td{:colspan => 3, "align" => "center"}
-      = "Active Members: #{@member_metrics.active}"
+      %strong
+        = "Total Current Members: #{@member_metrics.total_count}"
+  %tr
+    %td 
+      = "Full Time: #{@member_metrics.fulltime}"
+    %td 
+      = "Lite: #{@member_metrics.lite}"
+    %td 
+      = "Basic: #{@member_metrics.basic}"
+
+%h2 Members #{ link_to "Add a Member", new_member_path }
+
+%table{:border => 1, "cellpadding" => 5}
+  %tr
+    %td{:colspan => 3, "align" => "center"}
+      %strong
+        = "Total Active Members: #{@member_metrics.active}"
   %tr
     %td 
       = "Full: #{@member_metrics.fulltime_active}"
@@ -31,7 +36,8 @@
 %table{:border => 1, "cellpadding" => 5}      
   %tr
     %td{:colspan => 3, "align" => "center"}
-      = "Inactive Members: #{@dormant_members.length}"
+      %strong
+        = "Total Inactive Members: #{@dormant_members.length}"
   %tr    
     %td 
       = "Full: #{@member_metrics.fulltime_dormant}"
@@ -41,6 +47,3 @@
       = "Basic: #{@member_metrics.basic_dormant}"
 
 = member_table(@dormant_members, "dormant")
-
-%p 
-  = link_to "Add a Member", new_member_path

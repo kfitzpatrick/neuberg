@@ -1,0 +1,60 @@
+/*
+Version: 0.0.1
+Description: Clio
+Design by: Johnny Bilotta
+Development by: Alex Hillman
+*/
+
+body {
+  font-family:Verdana, sans-serif;
+	margin:0;
+	padding:0;
+	text-align:center;
+	background:#CCC;
+}
+a, a:visited, a:active, a:hover{
+	color:#012;
+	text-decoration:underline;
+	outline:none;
+}
+:focus {
+	-moz-outline-style: none;
+}
+#contents{
+  width:785px;
+  margin:30px auto 0 auto;
+  text-align:left;
+  background:#FFF;
+  padding:10px;
+}
+table#wide{
+  width:100%;
+}
+table tr td{
+  padding:5px;
+  border:solid 1px #fff;
+}
+table tr td.level{
+  width:100px;
+}
+table tr td.name{
+  width:250px;
+}
+.member {
+  background-color: #ddd;
+  margin: 1em;
+  padding: .5em;
+}
+h2{
+  font-size:22px;
+  margin-top:15px;
+}
+h2 a{
+  font-size:15px;
+  line-height:22px;
+  margin-left:10px;
+}
+h3{
+  font-size:18px;
+  margin-top:15px;
+}
